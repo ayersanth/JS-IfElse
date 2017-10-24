@@ -1,0 +1,17 @@
+* {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+button { 
+    color: #333;
+    text-align: center;
+    padding: 0 20px;
+    background: #f0f0f0;
+    }
+
+button.active {
+    background: #ea0044;
+    color: black;
+}

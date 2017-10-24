@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+</head>
+
+<body>
+    
+    <button id="second">!</button>
+    <button id="first">@</button>
+    <button id="fourth">#</button>
+    <button id="third">$</button>
+     
+
+
+	<ul>
+        <li id="one" class="puzzle">Hello,</li>
+        <li id="two" class="puzzle">is it</li>
+        <li id="three" class="puzzle">me</li>
+        <li id="four" class="puzzle">you're</li>
+        <li id="five" class="puzzle">looking for</li>
+    </ul>
+    
+<script
+	  src="https://code.jquery.com/jquery-2.2.4.min.js"
+	  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	  crossorigin="anonymous"></script>
+
+<script>
+   (function(){ 
+       
+        document.addEventListener("DOMContentLoaded", function() { 
+
+           var puz = document.getElementsByClassName("puzzle");
+           puz[0].style.display = "none";
+           puz[1].style.display = "none";
+           puz[2].style.display = "none";
+           puz[3].style.display = "none";
+           puz[4].style.display = "none";
+
+        });
+
+        $('button').click(function(){
+
+            if ($(this).hasClass("active")){
+                $(this).removeClass("active");
+            } 
+
+            else {
+                $(this).addClass("active");
+            }
+
+        });
+
+        $('button').click(function(){
+
+            if ($("#first").hasClass("active")) {
+                $("#one").show();
+            }
+            
+            else if ($("#first").hasClass("active") && ("#second").hasClass("active")){
+                $("#one").show();
+                $("#two").show();
+            }
+
+            else {
+                $(".puzzle").css("display", "none");
+            }
+
+        });
+        
+        
+    })();
+    
+    
+
+	
+
+	
+
+</script>
+</body>
+
+</html>
