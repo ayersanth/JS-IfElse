@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div id="square"></div>
+
+    </div>
+	
+	<script
+	  src="https://code.jquery.com/jquery-2.2.4.min.js"
+	  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	  crossorigin="anonymous"></script>
+
+	<script>
+
+        // Puts #square into the var getSquare
+        var getSquare = document.getElementById("square");
+		
+        // Returns a random number between 0 - 1 and rounds it to either 0 or 1.
+        // Similar to a boolean
+        function gamble(){
+            
+            var rando = Math.random();
+            return Math.round(rando);
+            
+        } /*gamble end*/
+        
+        // Function with the parameter of chance (requires an invoked argument) 
+        // If the argument gives a value of 0 it will change the css background-color for #square to back, else it will change it to white
+        function colour(chance){
+
+            if (chance == 0){
+                getSquare.style.backgroundColor = "black";
+                console.log("a");
+            }
+            else {
+                getSquare.style.backgroundColor = "white";
+                console.log("b");
+            }; /*if end*/
+            
+        } /*colour end*/
+
+        // calls the colour fuction in the event of a #square click and calls gamble for the argument
+        getSquare.onclick = function (){
+
+            colour(gamble());
+
+        } /*getSquare end*/
+          
+    
+	</script>
+
+</body>
+
+</html>
